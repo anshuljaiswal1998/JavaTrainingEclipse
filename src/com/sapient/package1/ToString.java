@@ -18,6 +18,7 @@ public class ToString {
 //		System.out.println("Contains: "+ set.contains(user1));
 ////		java.util.Iterator<User>;
 //		System.out.println(user1 == user2);
+		
 //		System.out.println(user1.equals(user2));
 		
 		Set<User> set = new TreeSet<>();
