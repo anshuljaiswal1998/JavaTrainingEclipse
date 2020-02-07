@@ -98,10 +98,11 @@ public class LeaveManagerClient {
 	}
 
 	public static void UpdateEmployees() throws SQLException {
-		int input = scn.nextInt();
 		EmployeeManager em = new EmployeeManager();
 		System.out.println("1. Enter new Employee");
 		System.out.println("2. Update Existing Employee");
+		System.out.println("3. Show Existing Employee");
+		int input = scn.nextInt();
 
 		switch (input) {
 		case 1:

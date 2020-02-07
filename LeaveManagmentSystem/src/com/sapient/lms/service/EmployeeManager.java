@@ -19,7 +19,7 @@ public class EmployeeManager {
 
 	public void insertEmployee(Employee e) throws SQLException {
 		Connection connection = getConnection();
-		PreparedStatement prepStatement = getConnection().prepareStatement("insert into lms(name,dept) values(?,?)");
+		PreparedStatement prepStatement = getConnection().prepareStatement("insert into lms(name,dept,leavesLeft) values(?,?,?)");
 		prepStatement.setString(1, e.getName());
 		prepStatement.setString(2, e.getDept());
 		prepStatement.setInt(3, 20);
@@ -29,11 +29,13 @@ public class EmployeeManager {
 	
 	public void updateEmployee(int empId, Employee e) throws SQLException {
 		Connection connection = getConnection();
-		PreparedStatement prepStatement = getConnection().prepareStatement("update lms set name=? dept=?");
+		PreparedStatement prepStatement = getConnection().prepareStatement("update lms set name=?,dept=? where id="+empId);
 		prepStatement.setString(1, e.getName());
 		prepStatement.setString(2, e.getDept());
 		prepStatement.execute();
+		prepStatement.close();
 		connection.close();
+		
 	}
 	
 	public boolean searchEmployee(int empId) throws SQLException {

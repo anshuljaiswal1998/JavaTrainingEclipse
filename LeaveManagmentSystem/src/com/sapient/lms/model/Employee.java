@@ -16,6 +16,11 @@ public class Employee {
 		this.Dept = dept;
 	}
 
+	@Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", name=" + name + ", Dept=" + Dept + "]";
+	}
+
 	public LeaveDetails getDetails() {
 		return details;
 	}
