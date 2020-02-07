@@ -1,6 +1,7 @@
 package com.sapient.lms.model;
 
 public class Employee {
+	
 	private int empId;
 	private String name;
 	private String Dept;
@@ -8,6 +9,11 @@ public class Employee {
 
 	public Employee() {
 		details = new LeaveDetails();
+	}
+	
+	public Employee(String name,String dept) {
+		this.name = name;
+		this.Dept = dept;
 	}
 
 	public LeaveDetails getDetails() {
